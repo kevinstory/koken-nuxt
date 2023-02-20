@@ -49,18 +49,22 @@ async function logout() {
         <template v-if="photo.photo.width > photo.photo.height">
           <div class="col-span-2">
             <a :href="'/photo/' + photo.id"
-              ><img
+              ><nuxt-img
                 :src="strapi + photo.photo.formats.small.url"
                 class="block object-cover object-center w-full h-full col-span-2 cursor-pointer"
+                quality="80"
+                loading="lazy"
             /></a>
           </div>
         </template>
         <template v-else>
           <div>
-            <img
+            <nuxt-img
               :src="strapi + photo.photo.formats.small.url"
               class="block object-cover object-center w-full h-full cursor-pointer"
               @click="navigateTo({ path: '/photo/' + photo.id })"
+              quality="80"
+              loading="lazy"
             />
           </div>
         </template>

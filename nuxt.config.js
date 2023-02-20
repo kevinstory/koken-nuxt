@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   css: ["~/assets/css/tailwind.css"],
-  modules: ["@pinia/nuxt"],
+  modules: ["@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt",'@nuxt/image-edge'],
   app: {
     head: {
       title: "Koken Nuxt",
@@ -11,6 +11,9 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+  image: {
+
   },
   postcss: {
     plugins: {
